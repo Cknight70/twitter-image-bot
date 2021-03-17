@@ -7,6 +7,7 @@ A bot for Twitter that will post a random image from a local folder
 3. Install node with ```npm install```
 4. Edit ```config.js``` and add your Twitter developer credentials which you can get [here](https://developer.twitter.com/en/portal/dashboard)
 5. In ```server.js``` edit ```var post_delay =``` to how many ms you want between posts.
+6. Start by running ```node server.js```
 
 # How it works
 After the post delay, the bot will look at ```images1``` pick a random image and post it to Twitter.

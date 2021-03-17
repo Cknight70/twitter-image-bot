@@ -22,6 +22,6 @@ After posting an image from ```images2``` it will move the image to ```images1``
 Once ```images2``` is exausted of images, the ```.bookmark``` file will be deleted, thus the bot will look to ```images1``` again for images to post to Twitter.
 
 # Hopes for the future
-Video files will crash the bot currently. I hope I can use the bot to post video files in the future
+Video files will crash the bot currently. I hope I can use the bot to post video files in the future.
 
 A way to caption images based on data contained in the image file name. As in Tweet text with the image posted.

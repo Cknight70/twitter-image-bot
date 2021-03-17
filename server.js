@@ -77,9 +77,9 @@ var empty_folder = '/images2/';
 
 
 //If /images2/ has the bookmark file start posting from there instead
-if(fs.existsSync(__dirname + empty_folder + '.folder2'))
+if(fs.existsSync(__dirname + empty_folder + '.bookmark'))
 {
-	console.log('Found .folder2 starting at folder 2 instead' );
+	console.log('Found .bookmark starting at folder 2 instead' );
 	var temp = current_folder;
 	current_folder = empty_folder;
 	empty_folder = temp;
@@ -96,7 +96,7 @@ function populate(current_folder)
 	for (var f in files) {
 		
 		//Only add to array if the file is not the bookmark
-		if( !(files[f] === '.folder2') )
+		if( !(files[f] === '.bookmark') )
 		{
 			images.push(files[f]);
 		}	
@@ -110,15 +110,15 @@ function handle_bookmark(current_folder)
 {
 	if(current_folder === '/images2/')
 	{
-		fs.writeFileSync(__dirname + current_folder + '.folder2', '1');
+		fs.writeFileSync(__dirname + current_folder + '.bookmark', '1');
 	}
 	else
 	{
 	
 		
-		if(fs.existsSync(__dirname + '/images2/' + '.folder2'))
+		if(fs.existsSync(__dirname + '/images2/' + '.bookmark'))
 		{
-		fs.unlinkSync(__dirname + '/images2/' + '.folder2');
+		fs.unlinkSync(__dirname + '/images2/' + '.bookmark');
 		}
 	}
 	

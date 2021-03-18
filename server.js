@@ -6,11 +6,8 @@ var fs = require('fs'),
     config = require(path.join(__dirname, 'config.js'));
 var T = new Twit(config);
 
-// Image metadata, such as captions
-var metadata = JSON.parse(fs.readFileSync(path.join(__dirname, 'metadata.json')));
-
 //Delay between posts
-var post_delay = 9600000
+var post_delay = 60000
 
 
 
@@ -21,6 +18,9 @@ function random_from_array(images){
 
 
 function fetch_caption(image_name) {
+    // Image metadata, such as captions
+    var metadata = JSON.parse(fs.readFileSync(path.join(__dirname, 'metadata.json')));
+    
     var image_metadata = metadata[image_name];
     return image_metadata ? image_metadata.caption : undefined;
 }

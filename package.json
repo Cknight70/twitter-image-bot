@@ -1,5 +1,5 @@
 {
-  "name": "uniquenamelolibot",
+  "name": "twitter-image-bot",
   "version": "1.0.0",
   "description": "posts stuff on twitter",
   "main": "index.js",

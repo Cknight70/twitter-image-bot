@@ -9,6 +9,8 @@ A bot for Twitter that will post a random image from a local folder
 5. In ```server.js``` edit ```var post_delay =``` to how many ms you want between posts.
 6. Start by running ```node server.js```
 
+- If you wish to caption the images with text, you can edit ```metadata.json```
+
 # How it works
 After the post delay, the bot will look at ```images1``` pick a random image and post it to Twitter.
 
@@ -24,5 +26,3 @@ Once ```images2``` is exausted of images, the ```.bookmark``` file will be delet
 
 # Hopes for the future
 Video files will crash the bot currently. I hope I can use the bot to post video files in the future.
-
-A way to caption images based on data contained in the image file name. As in Tweet text with the image posted.

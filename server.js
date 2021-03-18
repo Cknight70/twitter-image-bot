@@ -7,7 +7,9 @@ var fs = require('fs'),
 var T = new Twit(config);
 
 //Delay between posts
-var post_delay = 60000
+var post_delay = 960000
+// Image metadata such as captions
+var metadata = JSON.parse(fs.readFileSync(path.join(__dirname, 'metadata.json')));
 
 
 
@@ -18,9 +20,12 @@ function random_from_array(images){
 
 
 function fetch_caption(image_name) {
-    // Image metadata, such as captions
-    var metadata = JSON.parse(fs.readFileSync(path.join(__dirname, 'metadata.json')));
-    
+	try {
+		metadata = JSON.parse(fs.readFileSync(path.join(__dirname, 'metadata.json')));
+	} catch(e) {
+		console.log("Error reading metadata JSON file! Using the old version. Error details:")
+		console.log(e);
+	}
     var image_metadata = metadata[image_name];
     return image_metadata ? image_metadata.caption : undefined;
 }

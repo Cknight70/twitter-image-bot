@@ -7,7 +7,7 @@ A bot for Twitter that will post a random image from a local folder
 3. Install node with ```npm install```
 4. Edit ```config.js``` and add your Twitter developer credentials which you can get [here](https://developer.twitter.com/en/portal/dashboard)
 5. In ```server.js``` edit ```var post_delay =``` to how many ms you want between posts.
-6. Start by running ```node server.js```
+6. Start by running ```node server.js``` or you can make it into a [docker container](#using-docker)
 
 - If you wish to caption the images with text, you can edit ```metadata.json```
 
@@ -24,18 +24,15 @@ After posting an image from ```images2``` it will move the image to ```images1``
 
 Once ```images2``` is exausted of images, the ```.bookmark``` file will be deleted, thus the bot will look to ```images1``` again for images to post to Twitter.
 
-# Run Using docker
+# Using docker
 1. Install [Docker](https://docs.docker.com/get-docker/)
-2. ```cd``` to the extracted twitter-image-bot folder you downloaded.
-3. Edit ```config.js``` and add your Twitter developer credentials which you can get [here](https://developer.twitter.com/en/portal/dashboard)
-4. In ```server.js``` edit ```var post_delay =``` to how many ms you want between posts.
-5. Build your docker image ```docker build -t reponame/twitter-image-bot . --no-cache```
-6. Deploy your new container 
+2. Build your docker image ```sudo docker build -t reponame/twitter-image-bot . --no-cache```
+3. Deploy your new container 
 ```bash
-docker run -d \
+sudo docker run -d \
 --name=twitter-image-bot \
 -v /opt/twitter-image-bot/images1:/images1 \
--v /opt/twitter-image-bot/images2:/images1 \
+-v /opt/twitter-image-bot/images2:/images2 \
 --restart unless-stopped \
 reponame/twitter-image-bot:latest
 ```

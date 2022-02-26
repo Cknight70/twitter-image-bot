@@ -1,5 +1,5 @@
 # twitter-image-bot
-A bot for Twitter that will post a random image from a local folder
+A bot for Twitter that will post a random image from a local folder and will not repeat images until all images have been posted.
 
 # How to Setup
 1. Install [Node.Js](https://nodejs.org/en/download/)

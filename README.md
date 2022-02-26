@@ -9,7 +9,7 @@ A bot for Twitter that will post a random image from a local folder
 5. In ```server.js``` edit ```var post_delay =``` to how many ms you want between posts.
 6. Start by running ```node server.js```
 
-- If you wish to caption the images with text, you can edit ```metadata.json```
+- If you wish to caption the images with text, you can edit ```metadata.json``` for curated text or edit `status:` in server.js for the same text on every post (ex: `status: 'a new post!',`)
 
 # How it works
 After the post delay, the bot will look at ```images1``` pick a random image and post it to Twitter.

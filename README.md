@@ -1,3 +1,5 @@
+# NOTE: This is for Twitter's Old API and probably doesn't work anymore
+
 # twitter-image-bot
 A bot for Twitter that will post a random image from a local folder and will not repeat images until all images have been posted.
 
